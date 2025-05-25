@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useSignIn } from "@/hooks/useSignIn";
 
 const signInSchema = z.object({
   email: z.string().min(1, "Email required").email(),
@@ -20,8 +21,9 @@ const SignIn = () => {
   } = useForm<TSignIn>({
     resolver: zodResolver(signInSchema),
   });
+  const { mutate: signIn, isPending } = useSignIn();
   const onSubmit: SubmitHandler<TSignIn> = (data) => {
-    console.log(data);
+    signIn(data);
   };
   return (
     <div className="w-full max-w-md">
@@ -52,7 +54,7 @@ const SignIn = () => {
               label="Password"
               errors={errors.password}
             />
-            <Button className="mt-5 py-5">
+            <Button className="mt-5 py-5" isLoading={isPending}>
               Sign In <ArrowRight />
             </Button>
           </form>

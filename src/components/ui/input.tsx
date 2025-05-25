@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { type InputHTMLAttributes } from "react";
 import type {
   FieldError,
@@ -5,7 +6,6 @@ import type {
   Path,
   UseFormRegister,
 } from "react-hook-form";
-import { cn } from "../../utils/cn";
 
 interface InputProps<T extends FieldValues>
   extends InputHTMLAttributes<HTMLInputElement> {
