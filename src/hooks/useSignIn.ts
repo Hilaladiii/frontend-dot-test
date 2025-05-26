@@ -11,7 +11,6 @@ export const useSignIn = () => {
     mutationFn: ({ email, password }: { email: string; password: string }) =>
       signIn(email, password),
     onSuccess: (response) => {
-      console.log(response.data);
       if (response.error) {
         toast.error(response.error.message);
         return;

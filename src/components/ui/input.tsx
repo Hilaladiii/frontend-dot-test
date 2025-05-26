@@ -26,7 +26,7 @@ export const Input = <T extends FieldValues>({
 }: InputProps<T>) => {
   return (
     <div className="flex flex-col gap-2">
-      <label htmlFor={name} className="font-semibold text-base">
+      <label htmlFor={name} className="font-medium text-base">
         {label}
       </label>
       <input
