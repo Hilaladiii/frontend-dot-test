@@ -56,7 +56,7 @@ const MainQuestion = ({
             })}
             {totalAnswered === questions.length && (
               <Link to="/result">
-                <Button className="mt-3 p-6">Submit</Button>
+                <Button className="mt-5 w-full p-6">Submit</Button>
               </Link>
             )}
           </div>

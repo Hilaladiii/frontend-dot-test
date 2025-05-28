@@ -1,5 +1,5 @@
-import { Brain } from "lucide-react";
 import { Link, Outlet, useLocation } from "react-router-dom";
+import Logo from "../ui/logo";
 
 const AuthLayout = () => {
   const location = useLocation();
@@ -7,9 +7,7 @@ const AuthLayout = () => {
   return (
     <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
       <div className="mb-8 text-center">
-        <div className="mb-4 inline-flex h-16 w-16 transform items-center justify-center rounded-2xl bg-blue-600 transition-transform duration-300 hover:rotate-12">
-          <Brain className="h-8 w-8 text-white" />
-        </div>
+        <Logo className="transition-all duration-200 hover:rotate-15" />
         <h1 className="mb-2 text-3xl font-semibold text-gray-900">
           QuizMaster
         </h1>
