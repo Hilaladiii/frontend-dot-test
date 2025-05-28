@@ -6,18 +6,19 @@ import type { RouteObject } from "react-router-dom";
 
 export const privateRoutes: RouteObject[] = [
   {
+    path: "/",
     Component: MainLayout,
     children: [
       {
-        path: "/setup",
+        index: true,
         element: <Setup />,
       },
       {
-        path: "/quiz",
+        path: "quiz",
         element: <Quiz />,
       },
       {
-        path: "/result",
+        path: "result",
         element: <Result />,
       },
     ],

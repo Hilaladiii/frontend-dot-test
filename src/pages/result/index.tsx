@@ -45,7 +45,7 @@ const Result = () => {
     startTransition(() => {
       resetSetup();
       resetQuiz();
-      navigate("/setup");
+      navigate("/");
     });
   };
 
