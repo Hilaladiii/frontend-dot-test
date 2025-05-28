@@ -33,7 +33,7 @@ const SignUp = () => {
   };
   return (
     <div className="w-full max-w-md">
-      <Card className="shadow-sm bg-white">
+      <Card className="bg-white shadow-sm">
         <CardHeader>
           <CardTitle className="text-xl font-semibold text-gray-900">
             Join the quiz community
