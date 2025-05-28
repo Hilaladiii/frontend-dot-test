@@ -5,22 +5,22 @@ const AuthLayout = () => {
   const location = useLocation();
   const isSignUp = location.pathname === "/auth/sign-up";
   return (
-    <div className="min-h-screen flex-col bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4 relative overflow-hidden">
-      <div className="text-center mb-8">
-        <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-600 rounded-2xl mb-4 transform hover:rotate-12 transition-transform duration-300">
-          <Brain className="w-8 h-8 text-white" />
+    <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+      <div className="mb-8 text-center">
+        <div className="mb-4 inline-flex h-16 w-16 transform items-center justify-center rounded-2xl bg-blue-600 transition-transform duration-300 hover:rotate-12">
+          <Brain className="h-8 w-8 text-white" />
         </div>
-        <h1 className="text-3xl font-semibold text-gray-900 mb-2">
+        <h1 className="mb-2 text-3xl font-semibold text-gray-900">
           QuizMaster
         </h1>
         <p className="text-base text-gray-600">
           {isSignUp ? "Create your account" : "Welcome back"}
         </p>
       </div>
-      <div className="flex bg-gray-100 rounded-xl p-1 mb-6">
+      <div className="mb-6 flex rounded-xl bg-gray-100 p-1">
         <Link
           to="/auth/sign-in"
-          className={`py-2 px-10 rounded-lg font-medium transition-all duration-200 ${
+          className={`rounded-lg px-10 py-2 font-medium transition-all duration-200 ${
             !isSignUp
               ? "bg-white text-blue-600 shadow-sm"
               : "text-gray-600 hover:text-gray-900"
@@ -30,7 +30,7 @@ const AuthLayout = () => {
         </Link>
         <Link
           to="/auth/sign-up"
-          className={`py-2 px-10 rounded-lg font-medium transition-all duration-200 ${
+          className={`rounded-lg px-10 py-2 font-medium transition-all duration-200 ${
             isSignUp
               ? "bg-white text-blue-600 shadow-sm"
               : "text-gray-600 hover:text-gray-900"
