@@ -6,7 +6,7 @@ const GuestRoute = () => {
 
   if (loading) return null;
 
-  if (isAuthenticated) return <Navigate to="/home" replace />;
+  if (isAuthenticated) return <Navigate to="/setup" replace />;
 
   return <Outlet />;
 };
