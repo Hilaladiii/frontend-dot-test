@@ -14,7 +14,7 @@ export const useSignIn = () => {
         return;
       }
       toast.success("Success sign in to your account");
-      navigate("/home");
+      navigate("/setup");
     },
     onError: (error) => {
       toast.error(error.message);
