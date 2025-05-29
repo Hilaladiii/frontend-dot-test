@@ -21,6 +21,7 @@ const QuizContinuePopup = ({
   onContinue = () => {},
 }: QuizContinuePopupProps) => {
   const { timeLeft } = useTimer();
+
   if (!isOpen) return null;
 
   return (

@@ -57,7 +57,7 @@ export const useQuizStore = create<QuizState>()(
 
         const totalAnswered = Object.keys(newAnswers).length;
         const totalCorrect = Object.values(newAnswers).filter(
-          (a) => a.isCorrect
+          (a) => a.isCorrect,
         ).length;
         const totalWrong = totalAnswered - totalCorrect;
         const totalUnanswered = questions.length - totalAnswered;
@@ -84,7 +84,7 @@ export const useQuizStore = create<QuizState>()(
           incorrect_answers: question.incorrect_answers.map(decodeBase64),
         };
       },
-      resetQuiz: () =>
+      resetQuiz: () => {
         set({
           questions: [],
           answers: {},
@@ -92,10 +92,12 @@ export const useQuizStore = create<QuizState>()(
           totalCorrect: 0,
           totalWrong: 0,
           totalUnanswered: 0,
-        }),
+        });
+        localStorage.removeItem("quiz-time-left");
+      },
     }),
     {
       name: "quiz-storage",
-    }
-  )
+    },
+  ),
 );

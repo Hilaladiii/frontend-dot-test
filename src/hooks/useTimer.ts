@@ -11,6 +11,8 @@ export function useTimer() {
 
   useEffect(() => {
     let stored = Number(localStorage.getItem("quiz-time-left"));
+    if (!stored) return;
+
     const totalTime = questions.length * SECONDS_PER_QUESTION;
 
     if (!stored || stored > totalTime) stored = totalTime;

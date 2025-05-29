@@ -6,7 +6,6 @@ import { useQuestionQuery } from "@/hooks/useQuestionQuery";
 import { useQuizStore } from "@/stores/useQuizStore";
 import { useQuizSetupStore } from "@/stores/useQuizSetupStore";
 import Loading from "../loading/page";
-import QuizContinuePopup from "./components/QuizContinuePopup";
 
 const Quiz = () => {
   const { data, isLoading } = useQuestionQuery();
@@ -19,18 +18,12 @@ const Quiz = () => {
     totalWrong,
     answers,
   } = useQuizStore();
-  const [popUp, setPopUp] = useState({
-    show: false,
-    isPaused: false,
-  });
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const decodedQuestion = getDecodedQuestion(currentQuestion);
 
   useEffect(() => {
-    if (questions.length > 0 && Object.keys(answers).length > 0) {
-      setPopUp((prev) => ({ ...prev, show: true }));
-    } else if (!isLoading && data && questions.length === 0) {
+    if (!isLoading && data && questions.length === 0) {
       setQuestions(data!);
     }
   }, [data, questions.length, isLoading]);
@@ -43,10 +36,6 @@ const Quiz = () => {
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion((prev) => prev + 1);
     }
-  };
-
-  const handleContinueQuiz = () => {
-    setPopUp((prev) => ({ ...prev, show: !prev.show }));
   };
 
   const getQuestionStatus = (index: number) => {
@@ -81,15 +70,6 @@ const Quiz = () => {
           )}
         </div>
       </div>
-      {popUp.show && (
-        <QuizContinuePopup
-          isOpen={popUp.show}
-          onContinue={handleContinueQuiz}
-          answeredQuestion={totalCorrect + totalWrong}
-          title={category?.name || "Random"}
-          totalQuestions={questions.length}
-        />
-      )}
     </>
   );
 };

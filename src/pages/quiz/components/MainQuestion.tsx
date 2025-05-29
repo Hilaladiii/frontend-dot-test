@@ -44,6 +44,7 @@ const MainQuestion = ({
               const isSelected = selectedAnswer === option;
               return (
                 <ButtonOption
+                  key={index}
                   option={option}
                   index={index}
                   handleNextQuestion={() => {

@@ -1,4 +1,5 @@
 import MainLayout from "@/components/layout/MainLayout";
+import QuizSavedLayout from "@/components/layout/QuizSavedLayout";
 import Quiz from "@/pages/quiz";
 import Result from "@/pages/result";
 import Setup from "@/pages/setup";
@@ -10,12 +11,17 @@ export const privateRoutes: RouteObject[] = [
     Component: MainLayout,
     children: [
       {
-        index: true,
-        element: <Setup />,
-      },
-      {
-        path: "quiz",
-        element: <Quiz />,
+        Component: QuizSavedLayout,
+        children: [
+          {
+            index: true,
+            element: <Setup />,
+          },
+          {
+            path: "quiz",
+            element: <Quiz />,
+          },
+        ],
       },
       {
         path: "result",
