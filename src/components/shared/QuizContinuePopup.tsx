@@ -10,6 +10,7 @@ interface QuizContinuePopupProps {
   title: string;
   answeredQuestion: number;
   totalQuestions: number;
+  totalUnanswered: number;
   onContinue: () => void;
 }
 
@@ -18,6 +19,7 @@ const QuizContinuePopup = ({
   title,
   answeredQuestion,
   totalQuestions,
+  totalUnanswered,
   onContinue = () => {},
 }: QuizContinuePopupProps) => {
   const { timeLeft } = useTimer();
@@ -64,7 +66,7 @@ const QuizContinuePopup = ({
             <div className="mt-3 rounded-lg bg-white p-4 shadow-sm">
               <div className="mb-2 flex items-center justify-between">
                 <span className="text-sm text-gray-600">
-                  {answeredQuestion} answered • {totalQuestions} remaining
+                  {answeredQuestion} answered • {totalUnanswered} remaining
                 </span>
               </div>
               <Progress

@@ -7,7 +7,8 @@ import { useQuizSetupStore } from "@/stores/useQuizSetupStore";
 const QuizSavedLayout = () => {
   const navigate = useNavigate();
   const [show, setShow] = useState(false);
-  const { questions, totalCorrect, totalWrong, answers } = useQuizStore();
+  const { questions, totalCorrect, totalWrong, answers, totalUnanswered } =
+    useQuizStore();
   const { category } = useQuizSetupStore();
 
   useEffect(() => {
@@ -30,6 +31,7 @@ const QuizSavedLayout = () => {
         onContinue={handleQuizContinue}
         title={category?.name || "Random"}
         totalQuestions={questions.length}
+        totalUnanswered={totalUnanswered}
       />
     </>
   );
