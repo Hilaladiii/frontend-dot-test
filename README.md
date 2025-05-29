@@ -1,54 +1,24 @@
-# React + TypeScript + Vite
+# Quiz Master 🧠
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Quiz Master** is a modern and interactive web-based quiz application built with React. It allows users to log in, take quizzes with a timer, and even retake quizzes. The quiz data is fetched in real-time from [Open Trivia DB (opentdb.com)](https://opentdb.com/).
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🔐 User authentication (login & register) using **Supabase**
+- 🧠 Multiple choice quizzes from various categories and difficulties
+- ⏱️ Countdown timer for each quiz session
+- 🔁 Ability to retake quizzes
+- ⚡ Global state management with Zustand
+- 📡 Data fetching and caching with React Query
+- 🎨 Fully responsive and clean UI built with Tailwind CSS
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [React](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Zustand](https://zustand-demo.pmnd.rs/)
+- [React Query](https://tanstack.com/query/v4)
+- [Supabase](https://supabase.com/)
+- [Open Trivia DB](https://opentdb.com/)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+👉 **Live Demo:** [https://frontend-dot-test-abdullah-hilal.vercel.app/](https://frontend-dot-test-abdullah-hilal.vercel.app/)
