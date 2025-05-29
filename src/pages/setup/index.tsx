@@ -11,19 +11,19 @@ import UserInfo from "./components/UserInfo";
 
 const Setup = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex flex-col items-center justify-center p-4">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
       <HeaderQuizSetup />
-      <div className="w-full grid grid-cols-2 max-w-4xl gap-2">
+      <div className="grid w-full max-w-4xl grid-cols-1 gap-2 md:grid-cols-2">
         <QuizSetupNumberQuestion />
         <QuizSetupQuestionType />
         <QuizSetupCategory />
         <QuizSetupDifficulty />
-        <div className="col-span-2">
+        <div className="md:col-span-2">
           <QuizSetupSummary />
           <Link to="/quiz">
-            <Button className="w-full py-6 group mt-5">
+            <Button className="group mt-5 w-full py-6">
               Start{" "}
-              <ArrowRight className="group-hover:translate-x-3 transition-all duration-150" />
+              <ArrowRight className="transition-all duration-150 group-hover:translate-x-3" />
             </Button>
           </Link>
           <UserInfo />

@@ -21,7 +21,7 @@ const QuizNavigationSidebar = ({
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-4 gap-2">
+          <div className="grid grid-cols-5 gap-2 lg:grid-cols-4">
             {questions.map((_, index) => {
               const status = getQuestionStatus(index);
               return (

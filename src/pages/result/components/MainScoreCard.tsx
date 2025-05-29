@@ -27,7 +27,7 @@ const MainScoreCard = ({
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid gap-4 lg:grid-cols-3">
           <Stats
             background="bg-green-50"
             icon={CheckCircle2}
